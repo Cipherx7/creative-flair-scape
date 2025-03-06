@@ -1,7 +1,7 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Sparkle } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -65,9 +65,10 @@ const Navbar = () => {
         {/* Logo */}
         <Link 
           to="/" 
-          className="absolute left-1/2 transform -translate-x-1/2 text-wedding-lavender font-serif text-2xl font-semibold italic tracking-wider"
+          className="absolute left-1/2 transform -translate-x-1/2 flex items-center text-purple-600 font-serif text-2xl font-semibold italic tracking-wider"
         >
-          Luxury<span className="text-wedding-gold">Events</span>
+          <Sparkle className="mr-2 text-purple-600" size={24} />
+          Luxury<span className="text-purple-800">Events</span>
         </Link>
 
         {/* Right Menu */}
@@ -99,31 +100,31 @@ const Navbar = () => {
           <div className="flex flex-col h-full pt-20 px-6">
             <Link 
               to="/" 
-              className="py-4 text-xl font-medium border-b border-wedding-champagne"
+              className="py-4 text-xl font-medium border-b border-purple-100"
             >
               Home
             </Link>
             <Link 
               to="/about" 
-              className="py-4 text-xl font-medium border-b border-wedding-champagne"
+              className="py-4 text-xl font-medium border-b border-purple-100"
             >
               About
             </Link>
             <Link 
               to="/services" 
-              className="py-4 text-xl font-medium border-b border-wedding-champagne"
+              className="py-4 text-xl font-medium border-b border-purple-100"
             >
               Services
             </Link>
             <Link 
               to="/gallery" 
-              className="py-4 text-xl font-medium border-b border-wedding-champagne"
+              className="py-4 text-xl font-medium border-b border-purple-100"
             >
               Gallery
             </Link>
             <Link 
               to="/blog" 
-              className="py-4 text-xl font-medium border-b border-wedding-champagne"
+              className="py-4 text-xl font-medium border-b border-purple-100"
             >
               Blog
             </Link>

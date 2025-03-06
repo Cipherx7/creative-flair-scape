@@ -1,4 +1,4 @@
-
+import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ImageGrid from "@/components/ImageGrid";
 import ServiceCard from "@/components/ServiceCard";
@@ -46,6 +46,9 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Navbar */}
+      <Navbar />
+      
       {/* Hero Section */}
       <Hero />
 
@@ -100,7 +103,7 @@ const Index = () => {
       </section>
 
       {/* Statistics Section */}
-      <section className="py-20 bg-wedding-rose/10">
+      <section className="py-20 bg-purple-100/30">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
@@ -160,7 +163,7 @@ const Index = () => {
       <TestimonialSlider />
 
       {/* Call to Action */}
-      <section className="py-20 md:py-28 bg-wedding-champagne/50">
+      <section className="py-20 md:py-28 bg-purple-50">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="text-center max-w-3xl mx-auto">

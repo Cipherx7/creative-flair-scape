@@ -62,6 +62,8 @@ export default {
 					'lavender': '#967bb6',
 					'rose': '#E8ADAA',
 					'sage': '#BCBFA3',
+					'purple': '#9b87f5',
+					'purple-dark': '#7E69AB',
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
