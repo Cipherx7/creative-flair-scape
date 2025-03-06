@@ -1,5 +1,6 @@
-
 import { useState, useEffect } from "react";
+import Navbar from "@/components/Navbar";
+import PageHeader from "@/components/PageHeader";
 import ScrollReveal from "@/components/ScrollReveal";
 import { X } from "lucide-react";
 
@@ -112,18 +113,13 @@ const Gallery = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white pt-24">
-      {/* Header */}
-      <header className="py-20 md:py-28 bg-wedding-blush/30 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-3xl">
-            <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl mb-6 text-wedding-charcoal">Gallery</h1>
-            <p className="text-lg text-gray-700 max-w-2xl">
-              Browse our portfolio of beautiful weddings and celebrations, showcasing our attention to detail and design expertise.
-            </p>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-purple-50">
+      <Navbar />
+      
+      <PageHeader 
+        title="Gallery" 
+        description="Browse our portfolio of beautiful weddings and celebrations, showcasing our attention to detail and design expertise."
+      />
 
       {/* Gallery */}
       <section className="py-20">

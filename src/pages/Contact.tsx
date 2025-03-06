@@ -1,6 +1,6 @@
-
 import React from "react";
 import Navbar from "@/components/Navbar";
+import PageHeader from "@/components/PageHeader";
 import ScrollReveal from "@/components/ScrollReveal";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 
@@ -8,19 +8,14 @@ const Contact = () => {
   return (
     <div className="min-h-screen bg-purple-50">
       <Navbar />
+      
+      <PageHeader 
+        title="Contact Us" 
+        description="We would love to hear from you! Whether you're ready to start planning your dream wedding or have questions about our services, please reach out."
+      />
 
-      <main className="pt-32 pb-20">
+      <main className="pt-16 pb-20">
         <div className="container mx-auto px-6">
-          <ScrollReveal>
-            <div className="text-center mb-16">
-              <span className="uppercase text-xs tracking-widest font-medium text-wedding-gold mb-4 inline-block">Get in Touch</span>
-              <h1 className="font-serif text-4xl md:text-5xl mb-6 text-wedding-charcoal">Contact Us</h1>
-              <p className="text-gray-600 max-w-2xl mx-auto">
-                We would love to hear from you! Whether you're ready to start planning your dream wedding or have questions about our services, please reach out.
-              </p>
-            </div>
-          </ScrollReveal>
-
           <div className="max-w-5xl mx-auto">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
               <ScrollReveal delay={100}>
