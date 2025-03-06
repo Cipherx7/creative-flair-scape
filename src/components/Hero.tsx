@@ -15,17 +15,17 @@ const Hero = () => {
 
   const slides: HeroSlide[] = [
     {
-      image: '/lovable-uploads/d73fb99a-d589-4c90-af8c-2dbb1dc6e629.png',
+      image: 'https://www.conradpune.com/wp-content/uploads/2024/03/unnamed-9-1024x512.jpg',
       title: 'Luxury Weddings & Celebrations',
       subtitle: 'Creating unforgettable moments',
     },
     {
-      image: 'https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      image: 'https://www.varmalla.com/wp-content/uploads/2024/02/hindu-wedding-mandap-athens-greece-1-65bdc8ccafcea.webp',
       title: 'Destination Ceremonies',
       subtitle: 'Your dream location awaits',
     },
     {
-      image: 'https://images.unsplash.com/photo-1513278974582-3e1b4a4fa5e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80',
+      image: 'https://www.khimcruz.com/wp-content/uploads/2018/10/davao-wedding-simple-elegant-ballroom-reception-design-decor-by-Khim-Cruz-1014x487.jpg',
       title: 'Elegant Receptions',
       subtitle: 'Designed to perfection',
     },
