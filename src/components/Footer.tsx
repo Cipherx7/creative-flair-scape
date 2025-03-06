@@ -1,6 +1,6 @@
 
 import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Pinterest, Mail, Phone, MapPin } from 'lucide-react';
+import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 
 const Footer = () => {
   return (
@@ -36,12 +36,12 @@ const Footer = () => {
                 <Facebook size={20} />
               </a>
               <a 
-                href="https://pinterest.com" 
+                href="https://twitter.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-wedding-charcoal hover:text-wedding-gold transition-colors duration-300"
               >
-                <Pinterest size={20} />
+                <Twitter size={20} />
               </a>
             </div>
           </div>
