@@ -3,13 +3,14 @@ import { useEffect, useState } from 'react';
 
 const BackgroundEffects = () => {
   const [showFireworks, setShowFireworks] = useState(true);
-  const [balloons, setBalloons] = useState<Array<{ id: number; left: number; speed: number; size: number; color: string }>>([]);
+  const [balloons, setBalloons] = useState<Array<{ id: number; left: number; top: number; speed: number; size: number; color: string }>>([]);
 
   useEffect(() => {
     // Create initial balloons
     const initialBalloons = Array.from({ length: 15 }, (_, index) => ({
       id: index,
       left: Math.random() * 100, // Random position (0-100%)
+      top: 110, // Start below the screen
       speed: 0.5 + Math.random() * 1.5, // Random speed
       size: 20 + Math.random() * 30, // Random size between 20-50px
       color: `hsl(${Math.random() * 60 + 270}, 70%, 70%)`, // Purple/pink hues
@@ -29,7 +30,7 @@ const BackgroundEffects = () => {
         prev.map(balloon => ({
           ...balloon,
           // Move balloons upward, reset when they go off-screen
-          top: balloon.top ? balloon.top - balloon.speed : (balloon.top === 0 ? 0 : 110),
+          top: balloon.top - balloon.speed < -balloon.size ? 110 : balloon.top - balloon.speed,
         }))
       );
       animationId = requestAnimationFrame(animateBalloons);
@@ -49,14 +50,12 @@ const BackgroundEffects = () => {
       {balloons.map((balloon) => (
         <div
           key={balloon.id}
-          className="absolute animate-float"
+          className="absolute"
           style={{
             left: `${balloon.left}%`,
-            bottom: `-${balloon.size}px`,
+            top: `${balloon.top}%`,
             width: `${balloon.size}px`,
             height: `${balloon.size * 1.2}px`,
-            animation: `float ${15/balloon.speed}s linear infinite`,
-            animationDelay: `${balloon.id * 0.3}s`,
           }}
         >
           <div 
@@ -64,7 +63,7 @@ const BackgroundEffects = () => {
             style={{ backgroundColor: balloon.color }}
           />
           <div 
-            className="absolute bottom-0 left-[calc(50%-1px)] w-2px h-[15%]"
+            className="absolute bottom-0 left-[calc(50%-1px)] w-[2px] h-[15%]"
             style={{ backgroundColor: 'rgba(255,255,255,0.7)' }}
           />
         </div>
