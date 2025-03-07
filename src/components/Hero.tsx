@@ -69,7 +69,7 @@ const Hero = () => {
           </p>
           <Link 
             to="/contact" 
-            className="inline-flex items-center bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 px-8 py-3 transition duration-300 group"
+            className="inline-flex items-center bg-white/40 backdrop-blur-sm hover:bg-white/20 text-white border border-white/30 px-8 py-3 transition duration-300 group"
           >
             <span className="mr-2 tracking-wider uppercase text-sm font-medium">Book a Consultation</span>
             <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
