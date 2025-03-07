@@ -30,13 +30,17 @@ const Navbar = () => {
   return (
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 dark:bg-purple-950/95 backdrop-blur-sm shadow-sm py-3' : 'bg-white/80 dark:bg-purple-950/80 backdrop-blur-sm py-6'
+        scrolled 
+          ? 'bg-white/95 dark:bg-purple-950/95 backdrop-blur-sm shadow-sm py-3' 
+          : 'bg-transparent dark:bg-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Mobile Menu Button */}
         <button 
-          className="md:hidden text-purple-900 dark:text-white"
+          className={`md:hidden ${
+            scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+          }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -46,38 +50,46 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-8">
           <Link 
             to="/" 
-            className="nav-link text-sm tracking-wider font-medium uppercase text-purple-900 dark:text-white"
+            className={`nav-link text-sm tracking-wider font-medium uppercase ${
+              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+            }`}
           >
             Home
           </Link>
           <Link 
             to="/about" 
-            className="nav-link text-sm tracking-wider font-medium uppercase text-purple-900 dark:text-white"
+            className={`nav-link text-sm tracking-wider font-medium uppercase ${
+              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+            }`}
           >
             About
           </Link>
           <Link 
             to="/services" 
-            className="nav-link text-sm tracking-wider font-medium uppercase text-purple-900 dark:text-white"
+            className={`nav-link text-sm tracking-wider font-medium uppercase ${
+              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+            }`}
           >
             Services
           </Link>
         </nav>
 
         {/* Logo */}
-        <div className="flex justify-center items-center">
+        <div className="flex items-center">
           <Link 
             to="/" 
-            className="flex flex-col items-center"
+            className="flex items-center"
           >
-            <div className="rounded-full bg-white/90 dark:bg-purple-800/90 p-2 shadow-lg mb-1">
+            <div className="rounded-full bg-white/90 dark:bg-purple-800/90 p-2 shadow-lg">
               <img 
                 src="https://cdn-icons-png.flaticon.com/512/5726/5726500.png" 
                 alt="Divine Daze Events Logo" 
                 className="w-10 h-10"
               />
             </div>
-            <span className="font-serif italic text-lg font-semibold text-purple-700 dark:text-purple-300 whitespace-nowrap">
+            <span className="ml-3 font-serif italic text-lg font-semibold ${
+              scrolled ? 'text-purple-700 dark:text-purple-300' : 'text-white dark:text-purple-300'
+            } whitespace-nowrap">
               Divine Daze <span className="text-purple-500 dark:text-purple-200">Events</span>
             </span>
           </Link>
@@ -87,19 +99,25 @@ const Navbar = () => {
         <nav className="hidden md:flex items-center space-x-6">
           <Link 
             to="/gallery" 
-            className="nav-link text-sm tracking-wider font-medium uppercase text-purple-900 dark:text-white"
+            className={`nav-link text-sm tracking-wider font-medium uppercase ${
+              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+            }`}
           >
             Gallery
           </Link>
           <Link 
             to="/blog" 
-            className="nav-link text-sm tracking-wider font-medium uppercase text-purple-900 dark:text-white"
+            className={`nav-link text-sm tracking-wider font-medium uppercase ${
+              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+            }`}
           >
             Blog
           </Link>
           <Link 
             to="/contact" 
-            className="nav-link text-sm tracking-wider font-medium uppercase text-purple-900 dark:text-white"
+            className={`nav-link text-sm tracking-wider font-medium uppercase ${
+              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+            }`}
           >
             Contact
           </Link>
@@ -107,10 +125,14 @@ const Navbar = () => {
           {/* Theme Toggle */}
           <button
             onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className="p-2 rounded-full bg-purple-200/50 hover:bg-purple-200/80 transition-colors dark:bg-purple-700/50 dark:hover:bg-purple-700/80"
+            className={`p-2 rounded-full ${
+              scrolled 
+                ? 'bg-purple-200/50 hover:bg-purple-200/80 transition-colors dark:bg-purple-700/50 dark:hover:bg-purple-700/80' 
+                : 'bg-white/30 hover:bg-white/50 transition-colors dark:bg-purple-700/50 dark:hover:bg-purple-700/80'
+            }`}
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <Sun className="text-yellow-500" size={18} /> : <Moon className="text-purple-700" size={18} />}
+            {theme === 'dark' ? <Sun className="text-yellow-500" size={18} /> : <Moon className={`${scrolled ? 'text-purple-700' : 'text-white'}`} size={18} />}
           </button>
         </nav>
 
@@ -119,6 +141,21 @@ const Navbar = () => {
           mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}>
           <div className="flex flex-col h-full pt-20 px-6">
+            <div className="flex justify-center mb-8">
+              <Link to="/" className="flex items-center">
+                <div className="rounded-full bg-white/90 p-2 shadow-lg mr-3">
+                  <img 
+                    src="https://cdn-icons-png.flaticon.com/512/5726/5726500.png" 
+                    alt="Divine Daze Events Logo" 
+                    className="w-10 h-10"
+                  />
+                </div>
+                <span className="font-serif italic text-lg font-semibold text-white whitespace-nowrap">
+                  Divine Daze <span className="text-purple-300">Events</span>
+                </span>
+              </Link>
+            </div>
+            
             <Link 
               to="/" 
               className="py-4 text-xl font-medium border-b border-purple-800 text-white"
@@ -156,7 +193,7 @@ const Navbar = () => {
               Contact
             </Link>
             
-            <div className="mt-6 flex items-center space-x-4">
+            <div className="mt-6 flex items-center justify-center">
               {/* Mobile Theme Toggle */}
               <div className="flex items-center">
                 <span className="text-white mr-3">Theme:</span>

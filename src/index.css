@@ -3,6 +3,10 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   :root {
     --background: 260 40% 98%;
     --foreground: 240 10% 4%;
@@ -81,7 +85,7 @@
   }
 
   body {
-    @apply bg-gradient-to-b from-purple-100 via-purple-50 to-white text-foreground font-sans dark:bg-gradient-to-b dark:from-purple-950 dark:via-purple-900 dark:to-purple-800;
+    @apply bg-white text-foreground font-sans dark:bg-gradient-to-b dark:from-purple-950 dark:via-purple-900 dark:to-purple-800;
     -webkit-font-smoothing: antialiased;
   }
 
