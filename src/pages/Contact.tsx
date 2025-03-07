@@ -6,6 +6,7 @@ import ScrollReveal from "@/components/ScrollReveal";
 import Footer from "@/components/Footer";
 import TeamSection from "@/components/TeamSection";
 import { Mail, Phone, MapPin, Send, MessageSquare, Sparkles } from "lucide-react";
+import { useToast } from "@/hooks/use-toast";
 
 const eventTypes = [
   "Wedding",
@@ -20,6 +21,7 @@ const eventTypes = [
 ];
 
 const Contact = () => {
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -39,6 +41,7 @@ const Contact = () => {
   });
 
   const [activeForm, setActiveForm] = useState("standard"); // "standard" or "web3"
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { id, value } = e.target;
@@ -56,18 +59,105 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Form submission logic would go here
-    console.log("Form submitted:", formData);
-    alert("Thank you for your message! We'll get back to you soon.");
+    setIsSubmitting(true);
+    
+    try {
+      const formDataToSend = new FormData();
+      Object.entries(formData).forEach(([key, value]) => {
+        formDataToSend.append(key, value);
+      });
+      
+      // Add your web3forms access key here
+      formDataToSend.append("access_key", "YOUR_ACCESS_KEY_HERE");
+      
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSend
+      }).then(res => res.json());
+      
+      if (res.success) {
+        toast({
+          title: "Message sent successfully!",
+          description: "We'll get back to you soon.",
+        });
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          phone: "",
+          eventDate: "",
+          eventType: "",
+          message: ""
+        });
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: res.message || "Please try again later.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem sending your message. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  const handleWeb3Submit = (e: React.FormEvent) => {
+  const handleWeb3Submit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Web3 form submission logic would go here
-    console.log("Web3 Form submitted:", web3FormData);
-    alert("Thank you for your Web3 inquiry! We'll connect with you soon.");
+    setIsSubmitting(true);
+    
+    try {
+      const formData = new FormData();
+      Object.entries(web3FormData).forEach(([key, value]) => {
+        formData.append(key, value);
+      });
+      
+      // Add your web3forms access key here
+      formData.append("access_key", "YOUR_ACCESS_KEY_HERE");
+      formData.append("form_type", "web3_inquiry");
+      
+      const res = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData
+      }).then(res => res.json());
+      
+      if (res.success) {
+        toast({
+          title: "Web3 inquiry submitted!",
+          description: "We'll connect with you soon to discuss your project.",
+        });
+        // Reset form
+        setWeb3FormData({
+          name: "",
+          email: "",
+          walletAddress: "",
+          budget: "",
+          eventType: "",
+          specialRequests: ""
+        });
+      } else {
+        toast({
+          title: "Something went wrong",
+          description: res.message || "Please try again later.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "There was a problem submitting your inquiry. Please try again.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleWhatsApp = () => {
@@ -173,6 +263,7 @@ const Contact = () => {
                           <input
                             type="text"
                             id="name"
+                            name="name"
                             className="w-full px-4 py-2 border border-gray-300 dark:border-purple-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-purple-700 dark:text-white"
                             placeholder="Enter your name"
                             value={formData.name}
@@ -187,6 +278,7 @@ const Contact = () => {
                           <input
                             type="email"
                             id="email"
+                            name="email"
                             className="w-full px-4 py-2 border border-gray-300 dark:border-purple-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-purple-700 dark:text-white"
                             placeholder="Enter your email"
                             value={formData.email}
@@ -202,6 +294,7 @@ const Contact = () => {
                         <input
                           type="tel"
                           id="phone"
+                          name="phone"
                           className="w-full px-4 py-2 border border-gray-300 dark:border-purple-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-purple-700 dark:text-white"
                           placeholder="Enter your phone number"
                           value={formData.phone}
@@ -216,6 +309,7 @@ const Contact = () => {
                           <input
                             type="date"
                             id="eventDate"
+                            name="eventDate"
                             className="w-full px-4 py-2 border border-gray-300 dark:border-purple-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-purple-700 dark:text-white"
                             value={formData.eventDate}
                             onChange={handleChange}
@@ -227,6 +321,7 @@ const Contact = () => {
                           </label>
                           <select
                             id="eventType"
+                            name="eventType"
                             className="w-full px-4 py-2 border border-gray-300 dark:border-purple-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-purple-700 dark:text-white"
                             value={formData.eventType}
                             onChange={handleChange}
@@ -244,6 +339,7 @@ const Contact = () => {
                         </label>
                         <textarea
                           id="message"
+                          name="message"
                           rows={6}
                           className="w-full px-4 py-2 border border-gray-300 dark:border-purple-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:bg-purple-700 dark:text-white"
                           placeholder="Tell us about your event plans or questions"
@@ -256,8 +352,9 @@ const Contact = () => {
                         <button
                           type="submit"
                           className="btn-primary inline-flex items-center group px-8"
+                          disabled={isSubmitting}
                         >
-                          <span>Send Message</span>
+                          <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
                           <Send size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
                         </button>
                         
@@ -287,6 +384,7 @@ const Contact = () => {
                           <input
                             type="text"
                             id="name"
+                            name="name"
                             className="web3-input"
                             placeholder="Enter your name"
                             value={web3FormData.name}
@@ -301,6 +399,7 @@ const Contact = () => {
                           <input
                             type="email"
                             id="email"
+                            name="email"
                             className="web3-input"
                             placeholder="Enter your email"
                             value={web3FormData.email}
@@ -316,6 +415,7 @@ const Contact = () => {
                         <input
                           type="text"
                           id="walletAddress"
+                          name="walletAddress"
                           className="web3-input"
                           placeholder="0x..."
                           value={web3FormData.walletAddress}
@@ -329,6 +429,7 @@ const Contact = () => {
                           </label>
                           <select
                             id="budget"
+                            name="budget"
                             className="web3-input"
                             value={web3FormData.budget}
                             onChange={handleWeb3Change}
@@ -348,6 +449,7 @@ const Contact = () => {
                           </label>
                           <select
                             id="eventType"
+                            name="eventType"
                             className="web3-input"
                             value={web3FormData.eventType}
                             onChange={handleWeb3Change}
@@ -369,6 +471,7 @@ const Contact = () => {
                         </label>
                         <textarea
                           id="specialRequests"
+                          name="specialRequests"
                           rows={6}
                           className="web3-input"
                           placeholder="Tell us about your Web3 event ideas and requirements"
@@ -381,8 +484,9 @@ const Contact = () => {
                         <button
                           type="submit"
                           className="web3-button group flex items-center"
+                          disabled={isSubmitting}
                         >
-                          <span>Submit Web3 Inquiry</span>
+                          <span>{isSubmitting ? "Submitting..." : "Submit Web3 Inquiry"}</span>
                           <Sparkles size={16} className="ml-2" />
                         </button>
                       </div>

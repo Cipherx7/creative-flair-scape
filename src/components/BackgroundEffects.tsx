@@ -11,7 +11,7 @@ const BackgroundEffects = () => {
       id: index,
       left: Math.random() * 100, // Random position (0-100%)
       top: 110, // Start below the screen
-      speed: 0.2 + Math.random() * 0.3, // Slower random speed between 0.2-0.5
+      speed: 0.05 + Math.random() * 0.08, // Slower random speed between 0.05-0.13
       size: 20 + Math.random() * 30, // Random size between 20-50px
       color: `hsl(${Math.random() * 60 + 270}, 70%, 70%)`, // Purple/pink hues
     }));
