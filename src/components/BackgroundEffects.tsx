@@ -7,12 +7,12 @@ const BackgroundEffects = () => {
 
   useEffect(() => {
     // Create initial balloons
-    const initialBalloons = Array.from({ length: 15 }, (_, index) => ({
+    const initialBalloons = Array.from({ length: 12 }, (_, index) => ({
       id: index,
       left: Math.random() * 100, // Random position (0-100%)
       top: 110, // Start below the screen
-      speed: 0.5 + Math.random() * 1.0, // Random speed
-      size: 20 + Math.random() * 40, // Random size between 20-50px
+      speed: 0.2 + Math.random() * 0.3, // Slower random speed between 0.2-0.5
+      size: 20 + Math.random() * 30, // Random size between 20-50px
       color: `hsl(${Math.random() * 60 + 270}, 70%, 70%)`, // Purple/pink hues
     }));
     
@@ -56,6 +56,7 @@ const BackgroundEffects = () => {
             top: `${balloon.top}%`,
             width: `${balloon.size}px`,
             height: `${balloon.size * 1.2}px`,
+            opacity: '0.6', // Make balloons more subtle
           }}
         >
           <div 

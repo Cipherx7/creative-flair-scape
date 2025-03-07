@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -46,33 +45,33 @@
   }
 
   .dark {
-    --background: 265 30% 15%;
+    --background: 265 50% 10%;
     --foreground: 0 0% 98%;
 
-    --card: 265 30% 20%;
+    --card: 265 50% 15%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 265 30% 20%;
+    --popover: 265 50% 15%;
     --popover-foreground: 0 0% 98%;
 
-    --primary: 265 70% 60%;
+    --primary: 265 80% 70%;
     --primary-foreground: 355 100% 98%;
 
-    --secondary: 265 30% 25%;
+    --secondary: 265 50% 20%;
     --secondary-foreground: 0 0% 98%;
 
-    --muted: 265 30% 25%;
+    --muted: 265 50% 20%;
     --muted-foreground: 240 5% 65%;
 
-    --accent: 265 50% 25%;
+    --accent: 265 70% 30%;
     --accent-foreground: 0 0% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 265 30% 25%;
-    --input: 265 30% 25%;
-    --ring: 265 70% 60%;
+    --border: 265 50% 25%;
+    --input: 265 50% 25%;
+    --ring: 265 80% 70%;
   }
 }
 
@@ -247,4 +246,35 @@
 .parallax-footer::before {
   content: '';
   @apply absolute inset-0 bg-purple-950/70 dark:bg-purple-950/90;
+}
+
+/* Team member animation */
+.team-member {
+  @apply relative overflow-hidden transition-all duration-500 ease-in-out;
+}
+
+.team-member-image {
+  @apply grayscale hover:grayscale-0 transition-all duration-500;
+}
+
+.team-member-info {
+  @apply absolute inset-0 bg-gradient-to-t from-purple-900/80 to-transparent opacity-0 hover:opacity-100 transition-all duration-500 flex flex-col justify-end p-6 text-white;
+}
+
+.team-member:hover {
+  @apply transform scale-105;
+}
+
+/* Web3 form styles */
+.web3-input {
+  @apply w-full px-4 py-3 border border-purple-300 bg-white/80 dark:bg-purple-900/30 dark:border-purple-600 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent dark:text-white transition-all duration-300;
+}
+
+.web3-button {
+  @apply bg-gradient-to-r from-purple-500 to-indigo-600 hover:from-purple-600 hover:to-indigo-700 text-white font-medium py-3 px-6 rounded-md shadow-md hover:shadow-lg transition-all duration-300;
+}
+
+/* Music Player Button */
+.music-button {
+  @apply fixed bottom-6 right-6 z-50 rounded-full shadow-lg bg-white/80 dark:bg-purple-800/80 p-3 hover:scale-105 transition-transform duration-300;
 }
