@@ -11,8 +11,8 @@ const BackgroundEffects = () => {
       id: index,
       left: Math.random() * 100, // Random position (0-100%)
       top: 110, // Start below the screen
-      speed: 0.5 + Math.random() * 1.5, // Random speed
-      size: 20 + Math.random() * 30, // Random size between 20-50px
+      speed: 0.5 + Math.random() * 1.0, // Random speed
+      size: 20 + Math.random() * 40, // Random size between 20-50px
       color: `hsl(${Math.random() * 60 + 270}, 70%, 70%)`, // Purple/pink hues
     }));
     
@@ -83,7 +83,7 @@ const BackgroundEffects = () => {
       {/* 3D Wedding Vectors/Elements */}
       <div className="absolute bottom-0 left-0 w-full h-40 opacity-30 dark:opacity-10">
         <div className="absolute bottom-0 left-[5%] w-32 h-40 bg-contain bg-no-repeat bg-bottom" 
-             style={{ backgroundImage: 'url(https://www.pngall.com/wp-content/uploads/11/Wedding-Bell-Transparent.png)' }}></div>
+             style={{ backgroundImage: 'url(https://static.vecteezy.com/system/resources/previews/011/173/755/non_2x/golden-realistic-wedding-rings-with-reflection-anniversary-romantic-surprise-free-vector.jpg)' }}></div>
         <div className="absolute bottom-0 right-[10%] w-40 h-48 bg-contain bg-no-repeat bg-bottom" 
              style={{ backgroundImage: 'url(https://www.pngall.com/wp-content/uploads/11/Wedding-Flower-PNG-File.png)' }}></div>
       </div>
