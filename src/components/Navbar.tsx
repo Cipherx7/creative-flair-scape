@@ -88,7 +88,7 @@ const Navbar = () => {
               />
             </div>
             <span className="ml-3 font-serif italic text-lg font-semibold ${
-              scrolled ? 'text-purple-700 dark:text-purple-300' : 'text-white dark:text-purple-300'
+              scrolled ? 'text-purple-300 dark:text-purple-300' : 'text-white dark:text-purple-300'
             } whitespace-nowrap">
               DivineDaze <span className="text-purple-500 dark:text-purple-200">Events</span>
             </span>
