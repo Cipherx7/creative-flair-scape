@@ -15,7 +15,7 @@ const Hero = () => {
 
   const slides: HeroSlide[] = [
     {
-      image: 'https://www.conradpune.com/wp-content/uploads/2024/03/unnamed-9-1024x512.jpg',
+      image: 'https://amabyaisha.com/wp-content/uploads/2023/09/KSc3_037_7026-1536x1024.jpg',
       title: 'Luxury Weddings & Celebrations',
       subtitle: 'Creating unforgettable moments',
     },
