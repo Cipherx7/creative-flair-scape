@@ -82,7 +82,7 @@ const Navbar = () => {
           >
             <div className="rounded-full bg-white/90 dark:bg-purple-800/90 p-2 shadow-lg">
               <img 
-                src="https://cdn-icons-png.flaticon.com/512/5726/5726500.png" 
+                src="https://i.ibb.co/3Y1GYn4x/final-logo.png" 
                 alt="Divine Daze Events Logo" 
                 className="w-10 h-10"
               />
@@ -90,7 +90,7 @@ const Navbar = () => {
             <span className="ml-3 font-serif italic text-lg font-semibold ${
               scrolled ? 'text-purple-700 dark:text-purple-300' : 'text-white dark:text-purple-300'
             } whitespace-nowrap">
-              Divine Daze <span className="text-purple-500 dark:text-purple-200">Events</span>
+              DivineDaze <span className="text-purple-500 dark:text-purple-200">Events</span>
             </span>
           </Link>
         </div>
@@ -145,13 +145,13 @@ const Navbar = () => {
               <Link to="/" className="flex items-center">
                 <div className="rounded-full bg-white/90 p-2 shadow-lg mr-3">
                   <img 
-                    src="https://cdn-icons-png.flaticon.com/512/5726/5726500.png" 
+                    src="https://i.ibb.co/3Y1GYn4x/final-logo.png" 
                     alt="Divine Daze Events Logo" 
                     className="w-10 h-10"
                   />
                 </div>
                 <span className="font-serif italic text-lg font-semibold text-white whitespace-nowrap">
-                  Divine Daze <span className="text-purple-300">Events</span>
+                  DivineDaze <span className="text-purple-300">Events</span>
                 </span>
               </Link>
             </div>
