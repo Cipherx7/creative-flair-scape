@@ -1,178 +1,119 @@
 
-import { Link } from 'react-router-dom';
-import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from "react-router-dom";
+import { Instagram, Facebook, Twitter, Mail, Phone, MapPin } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 const Footer = () => {
+  const { theme, setTheme } = useTheme();
+  
   return (
-    <footer className="bg-wedding-champagne/30 pt-16 pb-8">
-      <div className="container mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 mb-12">
-          {/* Logo & About */}
-          <div>
-            <Link 
-              to="/" 
-              className="text-wedding-lavender font-serif text-2xl font-semibold italic tracking-wider mb-6 inline-block"
-            >
-              Luxury<span className="text-wedding-gold">Events</span>
-            </Link>
-            <p className="text-gray-600 mb-6">
-              Creating unforgettable wedding experiences and celebrations with elegance, sophistication, and attention to every detail.
+    <footer className="parallax-footer bg-purple-900 text-white pt-16 pb-8" 
+            style={{ backgroundImage: 'url(https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-4.0.3)' }}>
+      <div className="container mx-auto px-6 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
+          {/* About */}
+          <div className="col-span-1 md:col-span-1">
+            <h3 className="text-xl font-serif mb-4">Luxury<span className="text-purple-300">Events</span></h3>
+            <p className="text-sm text-gray-300 mb-4">
+              Creating elegant and memorable celebrations since 2010. Our passion is turning your dream events into reality.
             </p>
             <div className="flex space-x-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-wedding-charcoal hover:text-wedding-gold transition-colors duration-300"
-              >
+              <a href="#" className="text-gray-300 hover:text-purple-300 transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-wedding-charcoal hover:text-wedding-gold transition-colors duration-300"
-              >
+              <a href="#" className="text-gray-300 hover:text-purple-300 transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a 
-                href="https://twitter.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="text-wedding-charcoal hover:text-wedding-gold transition-colors duration-300"
-              >
+              <a href="#" className="text-gray-300 hover:text-purple-300 transition-colors" aria-label="Twitter">
                 <Twitter size={20} />
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-serif text-xl mb-6 text-wedding-charcoal">Quick Links</h3>
-            <ul className="space-y-3">
+          <div className="col-span-1 md:col-span-1">
+            <h3 className="text-lg font-serif mb-4">Quick Links</h3>
+            <ul className="space-y-2">
               <li>
-                <Link 
-                  to="/about" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  About Us
-                </Link>
+                <Link to="/" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">Home</Link>
               </li>
               <li>
-                <Link 
-                  to="/services" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  Services
-                </Link>
+                <Link to="/about" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">About Us</Link>
               </li>
               <li>
-                <Link 
-                  to="/gallery" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  Gallery
-                </Link>
+                <Link to="/services" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">Services</Link>
               </li>
               <li>
-                <Link 
-                  to="/blog" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  Blog
-                </Link>
+                <Link to="/gallery" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">Gallery</Link>
               </li>
               <li>
-                <Link 
-                  to="/contact" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  Contact
-                </Link>
+                <Link to="/contact" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">Contact</Link>
               </li>
             </ul>
           </div>
 
           {/* Services */}
-          <div>
-            <h3 className="font-serif text-xl mb-6 text-wedding-charcoal">Our Services</h3>
-            <ul className="space-y-3">
+          <div className="col-span-1 md:col-span-1">
+            <h3 className="text-lg font-serif mb-4">Our Services</h3>
+            <ul className="space-y-2">
               <li>
-                <Link 
-                  to="/services" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  Full Wedding Planning
-                </Link>
+                <Link to="/services" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">Wedding Planning</Link>
               </li>
               <li>
-                <Link 
-                  to="/services" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  Destination Weddings
-                </Link>
+                <Link to="/services" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">Birthday Parties</Link>
               </li>
               <li>
-                <Link 
-                  to="/services" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  Day-of Coordination
-                </Link>
+                <Link to="/services" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">Engagement & Proposals</Link>
               </li>
               <li>
-                <Link 
-                  to="/services" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  Luxury Event Styling
-                </Link>
+                <Link to="/services" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">Haldi Ceremonies</Link>
               </li>
               <li>
-                <Link 
-                  to="/services" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  Corporate Events
-                </Link>
+                <Link to="/services" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">Receptions</Link>
               </li>
             </ul>
           </div>
 
           {/* Contact */}
-          <div>
-            <h3 className="font-serif text-xl mb-6 text-wedding-charcoal">Contact Us</h3>
-            <ul className="space-y-4">
+          <div className="col-span-1 md:col-span-1">
+            <h3 className="text-lg font-serif mb-4">Contact Info</h3>
+            <ul className="space-y-3">
               <li className="flex items-start">
-                <MapPin size={20} className="text-wedding-gold mt-1 mr-3 flex-shrink-0" />
-                <span className="text-gray-600">123 Elegant Street, Suite 400<br />Beverly Hills, CA 90210</span>
+                <MapPin size={16} className="mr-2 mt-1 text-purple-300" />
+                <span className="text-gray-300 text-sm">123 Luxury Lane, Beverly Hills, CA 90210</span>
               </li>
               <li className="flex items-center">
-                <Phone size={20} className="text-wedding-gold mr-3 flex-shrink-0" />
-                <a 
-                  href="tel:+1234567890" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  +1 (234) 567-890
-                </a>
+                <Phone size={16} className="mr-2 text-purple-300" />
+                <a href="tel:+1234567890" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">(123) 456-7890</a>
               </li>
               <li className="flex items-center">
-                <Mail size={20} className="text-wedding-gold mr-3 flex-shrink-0" />
-                <a 
-                  href="mailto:info@luxuryevents.com" 
-                  className="text-gray-600 hover:text-wedding-gold transition-colors duration-300"
-                >
-                  info@luxuryevents.com
-                </a>
+                <Mail size={16} className="mr-2 text-purple-300" />
+                <a href="mailto:info@luxuryevents.com" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">info@luxuryevents.com</a>
               </li>
             </ul>
+            
+            {/* Theme Toggle */}
+            <div className="mt-6 flex items-center">
+              <span className="text-sm text-gray-300 mr-3">Theme:</span>
+              <button
+                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+                className="p-2 rounded-full bg-purple-800 hover:bg-purple-700 transition-colors"
+                aria-label="Toggle theme"
+              >
+                {theme === 'dark' ? 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-yellow-300"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>
+                  : 
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-white"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+                }
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="pt-8 border-t border-gray-200 text-center text-gray-500 text-sm">
-          <p>&copy; {new Date().getFullYear()} Luxury Events. All rights reserved.</p>
+        <div className="mt-12 pt-8 border-t border-purple-800/50">
+          <p className="text-center text-sm text-gray-400">
+            &copy; {new Date().getFullYear()} LuxuryEvents. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>

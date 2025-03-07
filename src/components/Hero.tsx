@@ -45,7 +45,7 @@ const Hero = () => {
 
   return (
     <div className="relative w-full h-screen overflow-hidden">
-      {/* Background Image */}
+      {/* Background Image with darker overlay for better text contrast */}
       <div 
         className="absolute inset-0 w-full h-full transition-opacity duration-1000"
         style={{
@@ -55,7 +55,7 @@ const Hero = () => {
           opacity: isAnimating ? 1 : 0,
         }}
       >
-        <div className="absolute inset-0 bg-black/20"></div>
+        <div className="absolute inset-0 bg-black/50"></div> {/* Darker overlay for better navbar visibility */}
       </div>
 
       {/* Hero Content */}
