@@ -171,8 +171,8 @@ const Index = () => {
               <span className="uppercase text-xs tracking-widest font-medium text-wedding-gold mb-4 inline-block">Our Expertise</span>
               <h2 className="font-serif text-4xl mb-4 text-wedding-charcoal dark:text-white">Our Services</h2>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-               Planning a Wedding, Proposal, or Event is not easy
-We are experienced, so just leave it to us
+               Planning a Wedding, Proposal, or Event is not easy We are experienced, so just leave it to us
+              </p>
             </div>
           </ScrollReveal>
 
