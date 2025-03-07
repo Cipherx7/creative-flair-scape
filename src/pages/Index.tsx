@@ -99,15 +99,15 @@ const Index = () => {
           <ScrollReveal>
             <div className="max-w-3xl mx-auto text-center">
               <span className="uppercase text-xs tracking-widest font-medium text-wedding-gold mb-4 inline-block">Welcome to Luxury Events</span>
-              <h2 className="font-serif text-4xl md:text-5xl mb-6 text-wedding-charcoal dark:text-white">Creating Memorable Wedding Experiences</h2>
+              <h2 className="font-serif text-4xl md:text-5xl mb-6 text-wedding-charcoal dark:text-white">WE ARE HERE TO MAKE YOUR WEDDING AS GOOD AS YOU PINNED ON PINTEREST</h2>
               <p className="text-gray-600 dark:text-gray-300 mb-10 leading-relaxed">
-                We are a premier wedding planning and event design company specializing in creating extraordinary celebrations. With meticulous attention to detail and a passion for perfection, we transform your vision into an unforgettable experience.
+                We are here to make your wedding day as wonderfully magical and unforgettable as you have always envisioned it while scrolling through Pinterest and dreaming of your perfect celebration.
               </p>
               <Link 
                 to="/about" 
                 className="btn-primary inline-flex items-center group"
               >
-                <span>About Us</span>
+                <span>A Little About Us</span>
                 <ArrowRight size={16} className="ml-2 transition-transform duration-300 group-hover:translate-x-1" />
               </Link>
             </div>
@@ -171,8 +171,8 @@ const Index = () => {
               <span className="uppercase text-xs tracking-widest font-medium text-wedding-gold mb-4 inline-block">Our Expertise</span>
               <h2 className="font-serif text-4xl mb-4 text-wedding-charcoal dark:text-white">Our Services</h2>
               <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-                From full-service wedding planning to day-of coordination, we offer a range of services to meet your unique needs.
-              </p>
+               Planning a Wedding, Proposal, or Event is not easy
+We are experienced, so just leave it to us
             </div>
           </ScrollReveal>
 
