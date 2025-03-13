@@ -19,11 +19,9 @@ const About = () => {
               <div>
                 <h2 className="font-serif text-3xl mb-6 text-wedding-charcoal">Our Story</h2>
                 <p className="text-gray-600 mb-6">
-                  Luxury Events was founded in 2010 by Sarah Johnson, a passionate event planner with a vision for creating unforgettable celebrations. What started as a small, local business has grown into a premier event planning company serving clients worldwide.
-                </p>
+                Founded by Nupur Patil in Nashik, DivinedazEvents specializes in designing bespoke, luxurious events that bring your vision to life. Whether it's an intimate gathering or a grand celebration, we ensure every detail is meticulously planned and executed.
                 <p className="text-gray-600">
-                  Our team is dedicated to providing exceptional service and meticulous attention to detail, ensuring that every event is a true reflection of our clients' unique style and vision.
-                </p>
+                 With a passion for excellence and creativity, we serve clients globally, crafting unforgettable experiences that leave lasting impressions. At DivinedazEvents, we are committed to making your special moments extraordinary.
               </div>
             </ScrollReveal>
 
