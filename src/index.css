@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -141,6 +142,22 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* Sparkle animation for firecrackers */
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.2) rotate(180deg);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.8) rotate(360deg);
   }
 }
 
