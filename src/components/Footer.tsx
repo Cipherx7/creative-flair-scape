@@ -18,15 +18,13 @@ const Footer = () => {
               Creating elegant and memorable celebrations since 2010. Our passion is turning your dream events into reality.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-gray-300 hover:text-purple-300 transition-colors" aria-label="Instagram">
+              <a href="https://www.instagram.com/divinedazeevents" className="text-gray-300 hover:text-purple-300 transition-colors" aria-label="Instagram">
                 <Instagram size={20} />
               </a>
               <a href="#" className="text-gray-300 hover:text-purple-300 transition-colors" aria-label="Facebook">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-gray-300 hover:text-purple-300 transition-colors" aria-label="Twitter">
-                <Twitter size={20} />
-              </a>
+              
             </div>
           </div>
 
@@ -80,15 +78,15 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <MapPin size={16} className="mr-2 mt-1 text-purple-300" />
-                <span className="text-gray-300 text-sm">123 Luxury Lane, Beverly Hills, CA 90210</span>
+                <span className="text-gray-300 text-sm">834, Roongta Futurex, Near RD Circle, Nashik, 422008.</span>
               </li>
               <li className="flex items-center">
                 <Phone size={16} className="mr-2 text-purple-300" />
-                <a href="tel:+1234567890" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">(123) 456-7890</a>
+                <a href="tel:+918847739236" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">+91 8847739236</a>
               </li>
               <li className="flex items-center">
                 <Mail size={16} className="mr-2 text-purple-300" />
-                <a href="mailto:info@luxuryevents.com" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">info@luxuryevents.com</a>
+                <a href="mailto:divinedazeevents@gmail.com" className="text-gray-300 hover:text-purple-300 transition-colors text-sm">divinedazeevents@gmail.com</a>
               </li>
             </ul>
             
@@ -112,7 +110,7 @@ const Footer = () => {
 
         <div className="mt-12 pt-8 border-t border-purple-800/50">
           <p className="text-center text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} LuxuryEvents. All rights reserved.
+            &copy; {new Date().getFullYear()} Divinedazeevents. All rights reserved.
           </p>
         </div>
       </div>
