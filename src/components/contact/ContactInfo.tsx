@@ -12,9 +12,9 @@ const ContactInfo = () => {
             <Phone className="text-purple-600 dark:text-purple-300" size={24} />
           </div>
           <h3 className="font-serif text-xl mb-2 dark:text-white">Call Us</h3>
-          <p className="text-gray-600 dark:text-gray-300 mb-2">We're available Monday-Friday</p>
-          <a href="tel:+1234567890" className="text-purple-600 dark:text-purple-300 hover:text-purple-800 dark:hover:text-purple-100 font-medium">
-            (123) 456-7890
+          <p className="text-gray-600 dark:text-gray-300 mb-2">We're available Monday-Sunday</p>
+          <a href="tel:+918847739236" className="text-purple-600 dark:text-purple-300 hover:text-purple-800 dark:hover:text-purple-100 font-medium">
+            +91 8847739236
           </a>
         </div>
       </ScrollReveal>
@@ -26,8 +26,8 @@ const ContactInfo = () => {
           </div>
           <h3 className="font-serif text-xl mb-2 dark:text-white">Email Us</h3>
           <p className="text-gray-600 dark:text-gray-300 mb-2">We'll respond within 24 hours</p>
-          <a href="mailto:info@divinedazeevents.com" className="text-purple-600 dark:text-purple-300 hover:text-purple-800 dark:hover:text-purple-100 font-medium">
-            info@divinedazeevents.com
+          <a href="mailto:divinedazeevents@gmail.com" className="text-purple-600 dark:text-purple-300 hover:text-purple-800 dark:hover:text-purple-100 font-medium">
+            divinedazeevents@gmail.com
           </a>
         </div>
       </ScrollReveal>
@@ -40,8 +40,8 @@ const ContactInfo = () => {
           <h3 className="font-serif text-xl mb-2 dark:text-white">Visit Us</h3>
           <p className="text-gray-600 dark:text-gray-300 mb-2">By appointment only</p>
           <address className="not-italic text-purple-600 dark:text-purple-300">
-            123 Luxury Lane<br />
-            Beverly Hills, CA 90210
+            834,Roongta Futurex<br />
+            Near RD Circle, Nashik,422008
           </address>
         </div>
       </ScrollReveal>
