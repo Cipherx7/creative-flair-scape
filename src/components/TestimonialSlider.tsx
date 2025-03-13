@@ -12,20 +12,20 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     quote: "Our wedding was absolutely perfect! The team at Luxury Events handled every detail with elegance and professionalism. We couldn't have asked for a more beautiful celebration.",
-    name: "Amelia & James",
-    role: "Married May 2023",
+    name: "Siddharth & Rutuja",
+    role: "Married May 2024",
     image: "https://images.unsplash.com/photo-1623778864982-6f1b19790322?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
   },
   {
     quote: "From the first consultation to the day of our wedding, they exceeded every expectation. Their attention to detail and creative vision brought our dream wedding to life.",
-    name: "Sophie & Michael",
+    name: "samarth & Payal",
     role: "Married August 2023",
     image: "https://images.unsplash.com/photo-1537633552985-df8429e8048b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
   },
   {
     quote: "Our destination wedding in Bali was handled flawlessly. They coordinated everything across continents with ease. Every guest was impressed with how smoothly everything went.",
-    name: "Elena & David",
-    role: "Married October 2023",
+    name: "Sahil & Priya",
+    role: "Married October 2024",
     image: "https://images.unsplash.com/photo-1519741347686-c1e0aadf4611?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80"
   }
 ];
