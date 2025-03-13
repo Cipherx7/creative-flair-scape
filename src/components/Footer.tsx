@@ -13,9 +13,9 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10">
           {/* About */}
           <div className="col-span-1 md:col-span-1">
-            <h3 className="text-xl font-serif mb-4">Luxury<span className="text-purple-300">Events</span></h3>
+            <h3 className="text-xl font-serif mb-4">Divinedaze<span className="text-purple-300">Events</span></h3>
             <p className="text-sm text-gray-300 mb-4">
-              Creating elegant and memorable celebrations since 2010. Our passion is turning your dream events into reality.
+              Creating elegant and memorable celebrations since 2018. Our passion is turning your dream events into reality.
             </p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/divinedazeevents" className="text-gray-300 hover:text-purple-300 transition-colors" aria-label="Instagram">
