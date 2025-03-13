@@ -197,19 +197,19 @@ const Index = () => {
           <ScrollReveal>
             <div className="grid grid-cols-1 md:grid-cols-4 gap-8 max-w-5xl mx-auto">
               <div className="text-center">
-                <h3 className="font-serif text-5xl mb-2 text-wedding-gold">250+</h3>
+                <h3 className="font-serif text-5xl mb-2 text-wedding-gold">25+</h3>
                 <p className="text-gray-600 dark:text-gray-300 uppercase tracking-wider text-sm">Weddings Planned</p>
               </div>
               <div className="text-center">
-                <h3 className="font-serif text-5xl mb-2 text-wedding-gold">15</h3>
+                <h3 className="font-serif text-5xl mb-2 text-wedding-gold">5</h3>
                 <p className="text-gray-600 dark:text-gray-300 uppercase tracking-wider text-sm">Years Experience</p>
               </div>
               <div className="text-center">
-                <h3 className="font-serif text-5xl mb-2 text-wedding-gold">20+</h3>
+                <h3 className="font-serif text-5xl mb-2 text-wedding-gold">5+</h3>
                 <p className="text-gray-600 dark:text-gray-300 uppercase tracking-wider text-sm">Destinations</p>
               </div>
               <div className="text-center">
-                <h3 className="font-serif text-5xl mb-2 text-wedding-gold">98%</h3>
+                <h3 className="font-serif text-5xl mb-2 text-wedding-gold">100%</h3>
                 <p className="text-gray-600 dark:text-gray-300 uppercase tracking-wider text-sm">Happy Couples</p>
               </div>
             </div>
