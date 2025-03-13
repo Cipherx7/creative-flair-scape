@@ -1,11 +1,15 @@
+
 import Navbar from "@/components/Navbar";
 import PageHeader from "@/components/PageHeader";
 import ScrollReveal from "@/components/ScrollReveal";
+import Footer from "@/components/Footer";
+import BackgroundEffects from "@/components/BackgroundEffects";
 
 const About = () => {
   return (
     <div className="min-h-screen bg-purple-50">
       <Navbar />
+      <BackgroundEffects />
       
       <PageHeader 
         title="About Us" 
@@ -38,49 +42,32 @@ const About = () => {
 
           <div className="mt-20">
             <ScrollReveal>
-              <h2 className="font-serif text-3xl mb-6 text-wedding-charcoal text-center">Our Team</h2>
+              <h2 className="font-serif text-3xl mb-6 text-wedding-charcoal text-center">Meet Our Founder</h2>
             </ScrollReveal>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="flex justify-center">
               <ScrollReveal delay={100}>
-                <div className="text-center">
+                <div className="text-center max-w-md">
                   <img
                     src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
-                    alt="Sarah Johnson"
-                    className="rounded-full w-32 h-32 mx-auto mb-4"
+                    alt="Nupur Patil"
+                    className="rounded-full w-40 h-40 mx-auto mb-4 object-cover"
                   />
-                  <h3 className="font-serif text-xl mb-2 text-wedding-charcoal">Sarah Johnson</h3>
-                  <p className="text-gray-600">Founder & CEO</p>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal delay={200}>
-                <div className="text-center">
-                  <img
-                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
-                    alt="Emily Davis"
-                    className="rounded-full w-32 h-32 mx-auto mb-4"
-                  />
-                  <h3 className="font-serif text-xl mb-2 text-wedding-charcoal">Emily Davis</h3>
-                  <p className="text-gray-600">Lead Planner</p>
-                </div>
-              </ScrollReveal>
-
-              <ScrollReveal delay={300}>
-                <div className="text-center">
-                  <img
-                    src="https://images.unsplash.com/photo-1503023345310-154ca6123c14?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTB8fHBlcnNvbnxlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60"
-                    alt="Michael Brown"
-                    className="rounded-full w-32 h-32 mx-auto mb-4"
-                  />
-                  <h3 className="font-serif text-xl mb-2 text-wedding-charcoal">Michael Brown</h3>
-                  <p className="text-gray-600">Event Designer</p>
+                  <h3 className="font-serif text-2xl mb-2 text-wedding-charcoal">Nupur Patil</h3>
+                  <p className="text-purple-600 font-medium mb-4">Founder & Creative Director</p>
+                  <p className="text-gray-600">
+                    With over 10 years of experience in event planning and design, Nupur brings creativity, 
+                    elegance, and attention to detail to every event. Her passion for creating magical moments 
+                    led her to establish DivinedazEvents, where she continues to transform dreams into reality.
+                  </p>
                 </div>
               </ScrollReveal>
             </div>
           </div>
         </div>
       </main>
+      
+      <Footer />
     </div>
   );
 };

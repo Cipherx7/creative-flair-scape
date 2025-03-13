@@ -1,42 +1,46 @@
 
 import { useEffect, useState } from 'react';
+import { Leaf } from 'lucide-react';
 
 const BackgroundEffects = () => {
   const [showFireworks, setShowFireworks] = useState(true);
-  const [balloons, setBalloons] = useState<Array<{ id: number; left: number; top: number; speed: number; size: number; color: string }>>([]);
+  const [leaves, setLeaves] = useState<Array<{ id: number; left: number; top: number; speed: number; size: number; rotation: number; color: string }>>([]);
 
   useEffect(() => {
-    // Create initial balloons
-    const initialBalloons = Array.from({ length: 12 }, (_, index) => ({
+    // Create initial leaves
+    const initialLeaves = Array.from({ length: 12 }, (_, index) => ({
       id: index,
       left: Math.random() * 100, // Random position (0-100%)
       top: 110, // Start below the screen
       speed: 0.05 + Math.random() * 0.08, // Slower random speed between 0.05-0.13
       size: 20 + Math.random() * 30, // Random size between 20-50px
-      color: `hsl(${Math.random() * 60 + 270}, 70%, 70%)`, // Purple/pink hues
+      rotation: Math.random() * 360, // Random rotation
+      color: `hsl(${Math.random() * 60 + 100}, 70%, 50%)`, // Green hues
     }));
     
-    setBalloons(initialBalloons);
+    setLeaves(initialLeaves);
     
     // Hide fireworks after 5 seconds
     const fireworksTimer = setTimeout(() => {
       setShowFireworks(false);
     }, 5000);
     
-    // Animation frame for balloon movement
+    // Animation frame for leaf movement
     let animationId: number;
-    const animateBalloons = () => {
-      setBalloons(prev => 
-        prev.map(balloon => ({
-          ...balloon,
-          // Move balloons upward, reset when they go off-screen
-          top: balloon.top - balloon.speed < -balloon.size ? 110 : balloon.top - balloon.speed,
+    const animateLeaves = () => {
+      setLeaves(prev => 
+        prev.map(leaf => ({
+          ...leaf,
+          // Move leaves upward, reset when they go off-screen
+          top: leaf.top - leaf.speed < -leaf.size ? 110 : leaf.top - leaf.speed,
+          // Gently rotate leaves as they float
+          rotation: leaf.rotation + 0.1,
         }))
       );
-      animationId = requestAnimationFrame(animateBalloons);
+      animationId = requestAnimationFrame(animateLeaves);
     };
     
-    animationId = requestAnimationFrame(animateBalloons);
+    animationId = requestAnimationFrame(animateLeaves);
     
     return () => {
       clearTimeout(fireworksTimer);
@@ -46,26 +50,22 @@ const BackgroundEffects = () => {
 
   return (
     <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-      {/* Balloons */}
-      {balloons.map((balloon) => (
+      {/* Leaves */}
+      {leaves.map((leaf) => (
         <div
-          key={balloon.id}
+          key={leaf.id}
           className="absolute"
           style={{
-            left: `${balloon.left}%`,
-            top: `${balloon.top}%`,
-            width: `${balloon.size}px`,
-            height: `${balloon.size * 1.2}px`,
-            opacity: '0.6', // Make balloons more subtle
+            left: `${leaf.left}%`,
+            top: `${leaf.top}%`,
+            opacity: '0.6', // Make leaves more subtle
+            transform: `rotate(${leaf.rotation}deg)`,
           }}
         >
-          <div 
-            className="absolute w-full h-[85%] rounded-full"
-            style={{ backgroundColor: balloon.color }}
-          />
-          <div 
-            className="absolute bottom-0 left-[calc(50%-1px)] w-[2px] h-[15%]"
-            style={{ backgroundColor: 'rgba(255,255,255,0.7)' }}
+          <Leaf 
+            size={leaf.size} 
+            color={leaf.color}
+            strokeWidth={1}
           />
         </div>
       ))}
