@@ -48,7 +48,7 @@ const ContactForm = () => {
       });
       
       // Add your web3forms access key here
-      formDataToSend.append("access_key", "YOUR_ACCESS_KEY_HERE");
+      formDataToSend.append("access_key", "a00e4a49-3bc2-4d32-a57e-d7e26f643bec");
       
       const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -89,7 +89,7 @@ const ContactForm = () => {
 
   const handleWhatsApp = () => {
     const text = `Hello Divine Daze Events! I'm interested in discussing my ${formData.eventType || "event"} plans.`;
-    const url = `https://wa.me/1234567890?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/+9188477392369?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
 
