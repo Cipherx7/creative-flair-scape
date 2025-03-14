@@ -1,14 +1,12 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Moon, Sun } from 'lucide-react';
-import { useTheme } from '@/components/ThemeProvider';
+import { Menu, X } from 'lucide-react';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
-  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,15 +29,15 @@ const Navbar = () => {
     <header 
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white/95 dark:bg-purple-950/95 backdrop-blur-sm shadow-sm py-3' 
-          : 'bg-transparent dark:bg-transparent py-6'
+          ? 'bg-white/95 backdrop-blur-sm shadow-sm py-3' 
+          : 'bg-transparent py-6'
       }`}
     >
       <div className="container mx-auto px-6 flex justify-between items-center">
         {/* Mobile Menu Button */}
         <button 
           className={`md:hidden ${
-            scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+            scrolled ? 'text-purple-900' : 'text-white'
           }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -51,7 +49,7 @@ const Navbar = () => {
           <Link 
             to="/" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+              scrolled ? 'text-purple-900' : 'text-white'
             }`}
           >
             Home
@@ -59,7 +57,7 @@ const Navbar = () => {
           <Link 
             to="/about" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+              scrolled ? 'text-purple-900' : 'text-white'
             }`}
           >
             About
@@ -67,7 +65,7 @@ const Navbar = () => {
           <Link 
             to="/services" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+              scrolled ? 'text-purple-900' : 'text-white'
             }`}
           >
             Services
@@ -80,17 +78,17 @@ const Navbar = () => {
             to="/" 
             className="flex items-center"
           >
-            <div className="rounded-full bg-white/90 dark:bg-purple-800/90 p-2 shadow-lg">
+            <div className="rounded-full bg-white/90 p-2 shadow-lg">
               <img 
                 src="https://i.ibb.co/3Y1GYn4x/final-logo.png" 
                 alt="Divine Daze Events Logo" 
                 className="w-10 h-10"
               />
             </div>
-            <span className="ml-3 font-serif italic text-lg font-semibold ${
-              scrolled ? 'text-purple-300 dark:text-purple-300' : 'text-white dark:text-purple-300'
-            } whitespace-nowrap">
-              DivineDaze <span className="text-purple-500 dark:text-purple-200">Events</span>
+            <span className={`ml-3 font-serif italic text-lg font-semibold ${
+              scrolled ? 'text-purple-500' : 'text-white'
+            } whitespace-nowrap`}>
+              DivineDaze <span className="text-purple-500">Events</span>
             </span>
           </Link>
         </div>
@@ -100,7 +98,7 @@ const Navbar = () => {
           <Link 
             to="/gallery" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+              scrolled ? 'text-purple-900' : 'text-white'
             }`}
           >
             Gallery
@@ -108,7 +106,7 @@ const Navbar = () => {
           <Link 
             to="/blog" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+              scrolled ? 'text-purple-900' : 'text-white'
             }`}
           >
             Blog
@@ -116,24 +114,11 @@ const Navbar = () => {
           <Link 
             to="/contact" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900 dark:text-white' : 'text-white dark:text-white'
+              scrolled ? 'text-purple-900' : 'text-white'
             }`}
           >
             Contact
           </Link>
-          
-          {/* Theme Toggle */}
-          <button
-            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-            className={`p-2 rounded-full ${
-              scrolled 
-                ? 'bg-purple-200/50 hover:bg-purple-200/80 transition-colors dark:bg-purple-700/50 dark:hover:bg-purple-700/80' 
-                : 'bg-white/30 hover:bg-white/50 transition-colors dark:bg-purple-700/50 dark:hover:bg-purple-700/80'
-            }`}
-            aria-label="Toggle theme"
-          >
-            {theme === 'dark' ? <Sun className="text-yellow-500" size={18} /> : <Moon className={`${scrolled ? 'text-purple-700' : 'text-white'}`} size={18} />}
-          </button>
         </nav>
 
         {/* Mobile Menu (Hidden by default) */}
@@ -192,20 +177,6 @@ const Navbar = () => {
             >
               Contact
             </Link>
-            
-            <div className="mt-6 flex items-center justify-center">
-              {/* Mobile Theme Toggle */}
-              <div className="flex items-center">
-                <span className="text-white mr-3">Theme:</span>
-                <button
-                  onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-                  className="p-2 rounded-full bg-purple-700 hover:bg-purple-600 transition-colors"
-                  aria-label="Toggle theme"
-                >
-                  {theme === 'dark' ? <Sun className="text-yellow-300" size={18} /> : <Moon className="text-white" size={18} />}
-                </button>
-              </div>
-            </div>
           </div>
         </div>
         
