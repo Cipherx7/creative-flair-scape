@@ -73,13 +73,14 @@ const BackgroundEffects = () => {
       {/* Firecrackers (shown for longer) */}
       {showFireworks && (
         <div className="absolute inset-0 fireworks-container">
-          <div className="firework" style={{ top: '30%', left: '20%' }}></div>
-          <div className="firework" style={{ top: '40%', left: '70%', animationDelay: '0.5s' }}></div>
-          <div className="firework" style={{ top: '20%', left: '50%', animationDelay: '1s' }}></div>
-          <div className="firework" style={{ top: '50%', left: '30%', animationDelay: '1.5s' }}></div>
-          <div className="firework" style={{ top: '60%', left: '80%', animationDelay: '2s' }}></div>
+          {/* Slowed down firework animations by adding slower animation duration */}
+          <div className="firework" style={{ top: '30%', left: '20%', animationDuration: '4s' }}></div>
+          <div className="firework" style={{ top: '40%', left: '70%', animationDelay: '0.5s', animationDuration: '4.5s' }}></div>
+          <div className="firework" style={{ top: '20%', left: '50%', animationDelay: '1s', animationDuration: '5s' }}></div>
+          <div className="firework" style={{ top: '50%', left: '30%', animationDelay: '1.5s', animationDuration: '4.8s' }}></div>
+          <div className="firework" style={{ top: '60%', left: '80%', animationDelay: '2s', animationDuration: '5.2s' }}></div>
           
-          {/* Additional firecrackers/sparkles */}
+          {/* Additional firecrackers/sparkles with slower animations */}
           {Array.from({ length: 8 }).map((_, index) => (
             <div 
               key={index} 
@@ -88,7 +89,7 @@ const BackgroundEffects = () => {
                 left: `${Math.random() * 100}%`,
                 top: `${Math.random() * 70}%`,
                 opacity: 0.8,
-                animation: `sparkle ${2 + Math.random() * 3}s ease-in-out ${Math.random() * 2}s infinite`
+                animation: `sparkle ${4 + Math.random() * 6}s ease-in-out ${Math.random() * 3}s infinite` // Increased duration from 2-5s to 4-10s
               }}
             >
               <Sparkles 

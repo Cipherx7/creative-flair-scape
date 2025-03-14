@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -156,7 +155,7 @@ div[data-lovable] {
   }
 }
 
-/* Sparkle animation for firecrackers */
+/* Sparkle animation for firecrackers - slowed down */
 @keyframes sparkle {
   0% {
     opacity: 0;
@@ -164,11 +163,11 @@ div[data-lovable] {
   }
   50% {
     opacity: 0.8;
-    transform: scale(1.2) rotate(180deg);
+    transform: scale(1.2) rotate(90deg);
   }
   100% {
     opacity: 0;
-    transform: scale(0.8) rotate(360deg);
+    transform: scale(0.8) rotate(180deg);
   }
 }
 
@@ -201,21 +200,21 @@ div[data-lovable] {
   @apply bg-white/80 backdrop-blur-sm border border-white/10 shadow-sm dark:bg-purple-900/40 dark:border-purple-700/20;
 }
 
-/* Fireworks animation */
+/* Fireworks animation - slowed down */
 .fireworks-container {
   @apply pointer-events-none;
 }
 
 .firework {
   @apply absolute w-4 h-4 opacity-0;
-  animation: explode 2s ease-out forwards;
+  animation: explode 5s ease-out forwards;
 }
 
 .firework::before,
 .firework::after {
   content: '';
   @apply absolute left-0 top-0 w-full h-full rounded-full;
-  animation: firework-particles 2s ease-out forwards;
+  animation: firework-particles 5s ease-out forwards;
 }
 
 @keyframes explode {
