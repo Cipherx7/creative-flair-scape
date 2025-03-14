@@ -89,7 +89,7 @@ const ContactForm = () => {
 
   const handleWhatsApp = () => {
     const text = `Hello Divine Daze Events! I'm interested in discussing my ${formData.eventType || "event"} plans.`;
-    const url = `https://wa.me/+9188477392369?text=${encodeURIComponent(text)}`;
+    const url = `https://wa.me/+918847739236?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');
   };
 
