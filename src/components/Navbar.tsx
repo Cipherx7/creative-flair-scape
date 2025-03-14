@@ -7,6 +7,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +38,7 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button 
           className={`md:hidden ${
-            scrolled ? 'text-purple-900' : 'text-white'
+            scrolled ? 'text-purple-900' : isHomePage ? 'text-white' : 'text-purple-800'
           }`}
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
@@ -49,7 +50,11 @@ const Navbar = () => {
           <Link 
             to="/" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900' : 'text-white'
+              scrolled 
+                ? 'text-purple-900' 
+                : isHomePage 
+                  ? 'text-white' 
+                  : 'text-purple-800'
             }`}
           >
             Home
@@ -57,7 +62,11 @@ const Navbar = () => {
           <Link 
             to="/about" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900' : 'text-white'
+              scrolled 
+                ? 'text-purple-900' 
+                : isHomePage 
+                  ? 'text-white' 
+                  : 'text-purple-800'
             }`}
           >
             About
@@ -65,7 +74,11 @@ const Navbar = () => {
           <Link 
             to="/services" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900' : 'text-white'
+              scrolled 
+                ? 'text-purple-900' 
+                : isHomePage 
+                  ? 'text-white' 
+                  : 'text-purple-800'
             }`}
           >
             Services
@@ -85,9 +98,7 @@ const Navbar = () => {
                 className="w-10 h-10"
               />
             </div>
-            <span className={`ml-3 font-serif italic text-lg font-semibold ${
-              scrolled ? 'text-purple-500' : 'text-white'
-            } whitespace-nowrap`}>
+            <span className={`ml-3 font-serif italic text-lg font-semibold text-purple-500 whitespace-nowrap`}>
               DivineDaze <span className="text-purple-500">Events</span>
             </span>
           </Link>
@@ -98,7 +109,11 @@ const Navbar = () => {
           <Link 
             to="/gallery" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900' : 'text-white'
+              scrolled 
+                ? 'text-purple-900' 
+                : isHomePage 
+                  ? 'text-white' 
+                  : 'text-purple-800'
             }`}
           >
             Gallery
@@ -106,7 +121,11 @@ const Navbar = () => {
           <Link 
             to="/blog" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900' : 'text-white'
+              scrolled 
+                ? 'text-purple-900' 
+                : isHomePage 
+                  ? 'text-white' 
+                  : 'text-purple-800'
             }`}
           >
             Blog
@@ -114,7 +133,11 @@ const Navbar = () => {
           <Link 
             to="/contact" 
             className={`nav-link text-sm tracking-wider font-medium uppercase ${
-              scrolled ? 'text-purple-900' : 'text-white'
+              scrolled 
+                ? 'text-purple-900' 
+                : isHomePage 
+                  ? 'text-white' 
+                  : 'text-purple-800'
             }`}
           >
             Contact
