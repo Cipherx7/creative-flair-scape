@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import ImageGrid from "@/components/ImageGrid";
@@ -115,8 +114,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Portfolio Section */}
-      <section className="py-20 bg-purple-100/50 dark:bg-purple-800/50">
+      {/* Portfolio Section - COMMENTED OUT */}
+      {/* <section className="py-20 bg-purple-100/50 dark:bg-purple-800/50">
         <div className="container mx-auto px-6">
           <ScrollReveal>
             <div className="text-center mb-16">
@@ -161,7 +160,7 @@ const Index = () => {
             </div>
           </ScrollReveal>
         </div>
-      </section>
+      </section> */}
 
       {/* Services Section */}
       <section className="py-20 bg-wedding-ivory dark:bg-purple-900/60">
