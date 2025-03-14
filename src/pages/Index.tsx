@@ -25,7 +25,7 @@ const Index = () => {
     {
       title: "Event Design",
       description: "Transform your vision into reality with our bespoke design services, from thematic concepts to floral arrangements.",
-      image: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
+      image: "https://i.ibb.co/HD6WX8fx/amish-thakkar-7-O422y-G-b80-unsplash.jpg",
       link: "/services"
     }
   ];
