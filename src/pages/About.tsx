@@ -49,7 +49,7 @@ const About = () => {
               <ScrollReveal delay={100}>
                 <div className="text-center max-w-md">
                   <img
-                    src="https://images.unsplash.com/photo-1552058544-f2b08422138a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cGVyc29ufGVufDB8fDB8fHww&auto=format&fit=crop&w=800&q=60"
+                    src="https://i.ibb.co/MkjBKsmM/nupur-profile.jpg"
                     alt="Nupur Patil"
                     className="rounded-full w-40 h-40 mx-auto mb-4 object-cover"
                   />
