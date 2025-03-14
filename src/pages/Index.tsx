@@ -19,7 +19,7 @@ const Index = () => {
     {
       title: "Destination Weddings",
       description: "Let us coordinate your perfect celebration at breathtaking locations around the world.",
-      image: "https://images.unsplash.com/photo-1583939003579-730e3918a45a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
+      image: "https://i.ibb.co/PZ1jKL6k/jeremy-wong-weddings-K8-Ki-CHh4-WU4-unsplash.jpg",
       link: "/services"
     },
     {
